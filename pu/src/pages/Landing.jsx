@@ -43,6 +43,11 @@ const Landing = () => {
   return (
     <div className="min-h-[100dvh] w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden bg-black">
       
+      {/* PU Icon - Top Left Corner */}
+      <div className="absolute top-6 left-6 z-20">
+        <img src="/icon.png" alt="PU Icon" className="w-12 h-12 object-contain" />
+      </div>
+      
       {/* Background Image - Removed scale-105 to fix zoom issue */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"

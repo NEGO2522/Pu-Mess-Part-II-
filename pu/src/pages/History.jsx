@@ -12,16 +12,18 @@ const History = () => {
     { date: "02 March", meal: "Lunch", time: "12:55 PM", type: "Mess Hall A" },
     { date: "01 March", meal: "Snacks", time: "05:15 PM", type: "Mess Hall A" },
     { date: "01 March", meal: "Lunch", time: "01:10 PM", type: "Mess Hall A" },
+    { date: "28 February", meal: "Dinner", time: "08:25 PM", type: "Mess Hall A" },
+    { date: "28 February", meal: "Lunch", time: "01:30 PM", type: "Mess Hall B" },
+    { date: "27 February", meal: "Breakfast", time: "09:00 AM", type: "Mess Hall A" },
+    { date: "27 February", meal: "Dinner", time: "08:15 PM", type: "Mess Hall A" },
   ];
 
-  // Load FontAwesome and inject scrollbar hiding styles
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
     document.head.appendChild(link);
 
-    // Style to hide scrollbar
     const style = document.createElement("style");
     style.innerHTML = `
       .hide-scrollbar::-webkit-scrollbar { display: none; }
@@ -31,9 +33,14 @@ const History = () => {
   }, []);
 
   return (
-    <div className="min-h-[100dvh] w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden bg-black">
+    <div className="min-h-[100dvh] w-full relative flex flex-col items-center font-sans text-white overflow-hidden bg-black">
       
-      {/* Background Image with Overlay - Scale removed to fix zoom */}
+      {/* PU Icon - Top Left Corner */}
+      <div className="absolute top-6 left-6 z-20">
+        <img src="/icon.png" alt="PU Icon" className="w-12 h-12 object-contain" />
+      </div>
+
+      {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('https://content.jdmagicbox.com/comp/jaipur/g3/0141px141.x141.230201230302.m1g3/catalogue/school-of-design-and-arts-poornima-university-vidhani-jaipur-colleges-0hpavyad5r.jpg')` }}
@@ -41,8 +48,8 @@ const History = () => {
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
       </div>
 
-      {/* Main Content Container - Adjusted for mobile scaling */}
-      <main className="relative z-10 w-full max-w-[350px] px-4 flex flex-col items-center h-[85vh]">
+      {/* Main Content Container - pt-24 provides the top spacing */}
+      <main className="relative z-10 w-full max-w-[350px] px-4 flex flex-col items-center pt-24 h-[calc(100vh-80px)]">
         
         {/* Header Section */}
         <div className="text-center mb-5">
@@ -51,7 +58,7 @@ const History = () => {
         </div>
 
         {/* The Glass Card - Scrollable History */}
-        <div className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-5 shadow-2xl flex flex-col overflow-hidden">
+        <div className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-5 shadow-2xl flex flex-col overflow-hidden max-h-[50vh]">
           
           {/* Stats Summary */}
           <div className="flex justify-between items-center mb-5 px-1">
@@ -71,7 +78,7 @@ const History = () => {
             </div>
           </div>
 
-          {/* List Area - Scrollbar Hidden */}
+          {/* List Area - Showing all items with hidden scrollbar */}
           <div className="flex-1 overflow-y-auto space-y-2.5 hide-scrollbar">
             {historyData.map((item, index) => (
               <div 
@@ -98,24 +105,22 @@ const History = () => {
             ))}
           </div>
 
-          {/* Bottom Fade Overlay for list */}
           <div className="mt-3 pt-2 border-t border-white/10 text-center">
              <p className="text-[9px] text-white/40 tracking-widest uppercase">End of Records</p>
           </div>
         </div>
 
-        {/* Footer Stats - Adjusted for mobile fit */}
+        {/* Footer Info Box */}
         <div className="mt-6 w-full px-1">
           <div className="bg-black/40 backdrop-blur-md rounded-xl p-3 border border-white/10 text-center">
             <p className="text-white/50 text-[9px] uppercase font-bold">Last Entry</p>
             <p className="text-base font-semibold">Today • Lunch</p>
           </div>
         </div>
-
       </main>
 
-      {/* Bottom Nav Simulation */}
-      <nav className="relative z-10 mt-8 mb-4 flex gap-8 text-white/50 text-sm">
+      {/* Bottom Nav Simulation - Stays at bottom */}
+      <nav className="absolute bottom-8 z-10 flex gap-8 text-white/50 text-sm">
         <button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button>
         <button className="text-white border-b-2 border-white pb-1">History</button>
         <button onClick={() => navigate('/timings')} className="hover:text-white transition-colors">Timings</button>
