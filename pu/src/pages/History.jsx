@@ -44,7 +44,7 @@ const History = () => {
       </div>
 
       {/* Main Content Container - pt-24 provides the top spacing */}
-      <main className="relative z-10 w-full max-w-[350px] px-4 flex flex-col items-center pt-24 h-[calc(100vh-80px)]">
+      <main className="relative z-10 w-full max-w-[350px] px-4 flex flex-col items-center pt-12 h-[calc(100vh-80px)]">
         
         {/* Header Section */}
         <div className="text-center mb-5 flex flex-col items-center">
