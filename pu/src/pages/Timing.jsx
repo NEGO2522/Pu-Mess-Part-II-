@@ -32,7 +32,7 @@ const Timings = () => {
   };
 
   return (
-    <div className="min-h-screen w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden bg-black">
+    <div className="min-h-[100dvh] w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden bg-black">
       
       {/* Background Image - scale-105 removed to fix zoom */}
       <div 
