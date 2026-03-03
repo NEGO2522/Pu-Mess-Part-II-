@@ -53,8 +53,8 @@ const History = () => {
         
         {/* Header Section */}
         <div className="text-center mb-5">
-          <h1 className="text-2xl font-bold tracking-tight mb-0.5">Meal History</h1>
-          <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Recent Activity</p>
+          <h1 className="text-2xl font-bold tracking-tight mb-0.5">PU Mess Connect</h1>
+          <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Meal History</p>
         </div>
 
         {/* The Glass Card - Scrollable History */}

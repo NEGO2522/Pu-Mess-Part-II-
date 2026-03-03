@@ -52,8 +52,8 @@ const Timings = () => {
         
         {/* Header Section */}
         <div className="text-center mb-5">
-          <h1 className="text-2xl font-bold tracking-tight mb-0.5">Mess Timings</h1>
-          <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Daily Schedule</p>
+          <h1 className="text-2xl font-bold tracking-tight mb-0.5">PU Mess Connect</h1>
+          <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Mess Timings</p>
         </div>
 
         {/* The Glass Card */}
