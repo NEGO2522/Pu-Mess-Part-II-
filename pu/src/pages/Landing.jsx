@@ -113,7 +113,7 @@ const Landing = () => {
       <nav className="relative z-10 mt-8 mb-4 flex gap-8 text-white/50 text-sm">
         <button className="text-white border-b-2 border-white pb-1">Home</button>
         <button onClick={() => navigate('/history')} className="hover:text-white transition-colors">History</button>
-        <button onClick={() => navigate('/timings')} className="hover:text-white transition-colors">Timings</button>
+        <button onClick={() => navigate('/menu')} className="hover:text-white transition-colors">Menu</button>
       </nav>
     </div>
   );
