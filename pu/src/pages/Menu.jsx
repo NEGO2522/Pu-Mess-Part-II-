@@ -11,6 +11,39 @@ const Menu = () => {
     link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
     document.head.appendChild(link);
     
+    // Hide scrollbars completely
+    const style = document.createElement("style");
+    style.innerHTML = `
+      * {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+      *::-webkit-scrollbar {
+        display: none !important;
+      width: 0 !important;
+        height: 0 !important;
+      }
+      .overflow-x-auto {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+      .overflow-x-auto::-webkit-scrollbar {
+        display: none !important;
+      width: 0 !important;
+        height: 0 !important;
+      }
+      .overflow-y-auto {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+      .overflow-y-auto::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+    `;
+    document.head.appendChild(style);
+    
     // Set initial selected date to today
     const today = new Date();
     const todayStr = getDateString(today);
@@ -78,6 +111,15 @@ const Menu = () => {
       {/* Main Content - pt-20 for top spacing */}
       <main className="relative z-10 w-full max-w-[360px] px-4 flex flex-col pt-20 h-[calc(100vh-80px)]">
         
+        {/* Header Section */}
+        <div className="text-center mb-5 flex flex-col items-center">
+          <div className="flex items-center gap-3 mb-1">
+            <img src="/icon.png" alt="PU Icon" className="w-10 h-10 object-contain" />
+            <h1 className="text-2xl font-bold tracking-tight">PU Mess Connect</h1>
+          </div>
+          <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Mess Menu</p>
+        </div>
+
         {/* Date Selector Row */}
         <div className="flex gap-3 overflow-x-auto hide-scrollbar mb-6 pb-2">
           {dates.map((item, idx) => {
@@ -98,8 +140,6 @@ const Menu = () => {
             );
           })}
         </div>
-
-        <h2 className="text-xl font-bold mb-4 px-1">Menu</h2>
 
         {/* Menu Glass Card */}
         <div className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-5 shadow-2xl flex flex-col gap-5 overflow-y-auto hide-scrollbar max-h-[50vh]">
