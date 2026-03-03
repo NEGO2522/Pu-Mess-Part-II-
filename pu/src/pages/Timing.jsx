@@ -34,11 +34,6 @@ const Timings = () => {
   return (
     <div className="min-h-[100dvh] w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden bg-black">
       
-      {/* PU Icon - Top Left Corner */}
-      <div className="absolute top-6 left-6 z-20">
-        <img src="/icon.png" alt="PU Icon" className="w-12 h-12 object-contain" />
-      </div>
-      
       {/* Background Image - scale-105 removed to fix zoom */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -51,8 +46,11 @@ const Timings = () => {
       <main className="relative z-10 w-full max-w-[350px] px-4 flex flex-col items-center">
         
         {/* Header Section */}
-        <div className="text-center mb-5">
-          <h1 className="text-2xl font-bold tracking-tight mb-0.5">PU Mess Connect</h1>
+        <div className="text-center mb-5 flex flex-col items-center">
+          <div className="flex items-center gap-3 mb-1">
+            <img src="/icon.png" alt="PU Icon" className="w-10 h-10 object-contain" />
+            <h1 className="text-2xl font-bold tracking-tight">PU Mess Connect</h1>
+          </div>
           <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Mess Timings</p>
         </div>
 
