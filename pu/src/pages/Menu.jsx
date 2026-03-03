@@ -109,7 +109,7 @@ const Menu = () => {
       </div>
 
       {/* Main Content - pt-20 for top spacing */}
-      <main className="relative z-10 w-full max-w-[360px] px-4 flex flex-col pt-20 h-[calc(100vh-80px)]">
+      <main className="relative z-10 w-full max-w-[360px] px-4 flex flex-col pt-12 h-[calc(100vh-80px)]">
         
         {/* Header Section */}
         <div className="text-center mb-5 flex flex-col items-center">
@@ -154,11 +154,7 @@ const Menu = () => {
           ))}
 
         </div>
-
         {/* Applied logic note */}
-        <p className="mt-4 text-[10px] text-white/40 text-center uppercase tracking-widest px-4">
-          Menu is subject to change based on availability
-        </p>
 
       </main>
 
