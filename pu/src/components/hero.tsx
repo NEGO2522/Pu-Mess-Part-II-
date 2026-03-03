@@ -1,9 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/ui/marquee";
 
 const teamAvatars = [
@@ -30,8 +27,8 @@ const teamAvatars = [
 ];
 
 const stats = [
-  { emoji: "", label: "Students More then",  },
-  { emoji: "", label: "Poornima University",value: "10000+" },
+  { value: "10,000+", label: "Students",  },
+  { value: "Poornima", label: "University", },
 ];
 
 function AvatarStack() {
@@ -71,7 +68,6 @@ function StatsMarquee() {
           <span className="font-medium font-mono text-sm text-white/70 uppercase tracking-[0.15em]">
             {stat.label}
           </span>
-          <span className="text-base">{stat.emoji}</span>
         </div>
       ))}
     </Marquee>
@@ -82,13 +78,18 @@ export default function Hero() {
   return (
     <section className="relative flex h-screen w-full flex-col items-start justify-end">
       <div
-        className="absolute inset-0 bg-center bg-cover"
-        style={{
-          backgroundImage:
-            "url(https://poornima.edu.in/assets/images/Online_meta.png)",
-        }}
+        className="absolute inset-0 bg-center bg-cover sm:bg-[url('https://poornima.edu.in/assets/images/Online_meta.png')] bg-[url('https://content.jdmagicbox.com/comp/jaipur/g3/0141px141.x141.230201230302.m1g3/catalogue/school-of-design-and-arts-poornima-university-vidhani-jaipur-colleges-0hpavyad5r.jpg')]"
       >
         <div className="absolute inset-0 bg-black/40" />
+      </div>
+
+      {/* Icon in top right corner */}
+      <div className="absolute top-4 right-4 z-20">
+        <img 
+          src="/icon.png" 
+          alt="Icon" 
+          className="w-12 h-12 sm:w-16 sm:h-16"
+        />
       </div>
 
       <div className="relative z-10 w-full max-w-4xl px-4 text-white sm:px-8 lg:px-16">
@@ -101,17 +102,10 @@ export default function Hero() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
           <div className="w-full space-y-4 sm:w-1/2">
             <h1 className="font-medium text-4xl text-white leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              We <span className="text-primary">think</span>, you{" "}
-              <span className="text-primary">grow</span>
+              We <span className="text-primary">think</span>, you <span className="text-primary">grow</span>
               <br />
-              <span className="text-white">— that's the deal</span>
+              <span className="text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light">Your Goals, Our Dreams</span>
             </h1>
-            <Button className="rounded-none py-0 pr-0 font-normal text-black text-lg">
-              Get Template
-              <span className="border-neutral-500 border-l p-3">
-                <ArrowRight />
-              </span>
-            </Button>
           </div>
           <div className="w-full sm:w-1/2">
             <p className="text-base text-primary italic sm:text-right md:text-2xl">
