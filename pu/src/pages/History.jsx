@@ -31,55 +31,55 @@ const History = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden">
+    <div className="min-h-screen w-full relative flex flex-col items-center justify-center font-sans text-white overflow-hidden bg-black">
       
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - Scale removed to fix zoom */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('https://content.jdmagicbox.com/comp/jaipur/g3/0141px141.x141.230201230302.m1g3/catalogue/school-of-design-and-arts-poornima-university-vidhani-jaipur-colleges-0hpavyad5r.jpg')` }}
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
       </div>
 
-      {/* Main Card Content */}
-      <main className="relative z-10 w-[90%] max-w-md flex flex-col items-center h-[85vh]">
+      {/* Main Content Container - Adjusted for mobile scaling */}
+      <main className="relative z-10 w-full max-w-[350px] px-4 flex flex-col items-center h-[85vh]">
         
         {/* Header Section */}
-        <div className="text-center mb-6 animate-fade-in-down">
-          <h1 className="text-3xl font-bold tracking-tight mb-1">Meal History</h1>
-          <p className="text-blue-300 font-medium tracking-widest uppercase text-xs">Recent Activity</p>
+        <div className="text-center mb-5">
+          <h1 className="text-2xl font-bold tracking-tight mb-0.5">Meal History</h1>
+          <p className="text-blue-300 font-medium tracking-widest uppercase text-[10px]">Recent Activity</p>
         </div>
 
         {/* The Glass Card - Scrollable History */}
-        <div className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] p-6 shadow-2xl flex flex-col overflow-hidden">
+        <div className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-5 shadow-2xl flex flex-col overflow-hidden">
           
           {/* Stats Summary */}
-          <div className="flex justify-between items-center mb-6 px-2">
+          <div className="flex justify-between items-center mb-5 px-1">
             <div className="text-center">
-              <p className="text-white/40 text-[10px] uppercase font-bold">This Week</p>
-              <p className="text-lg font-bold">18</p>
+              <p className="text-white/40 text-[9px] uppercase font-bold">This Week</p>
+              <p className="text-base font-bold">18</p>
             </div>
-            <div className="h-8 w-[1px] bg-white/10"></div>
+            <div className="h-6 w-[1px] bg-white/10"></div>
             <div className="text-center">
-              <p className="text-white/40 text-[10px] uppercase font-bold">Missed</p>
-              <p className="text-lg font-bold">2</p>
+              <p className="text-white/40 text-[9px] uppercase font-bold">Missed</p>
+              <p className="text-base font-bold">2</p>
             </div>
-            <div className="h-8 w-[1px] bg-white/10"></div>
+            <div className="h-6 w-[1px] bg-white/10"></div>
             <div className="text-center">
-              <p className="text-white/40 text-[10px] uppercase font-bold">Status</p>
-              <p className="text-lg font-bold text-green-400 font-mono italic">OK</p>
+              <p className="text-white/40 text-[9px] uppercase font-bold">Status</p>
+              <p className="text-base font-bold text-green-400 font-mono italic">OK</p>
             </div>
           </div>
 
           {/* List Area - Scrollbar Hidden */}
-          <div className="flex-1 overflow-y-auto space-y-3 hide-scrollbar">
+          <div className="flex-1 overflow-y-auto space-y-2.5 hide-scrollbar">
             {historyData.map((item, index) => (
               <div 
                 key={index} 
-                className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between"
+                className="w-full bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-sm border border-white/20">
+                  <div className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-xs border border-white/20">
                     <i className={`fa-solid ${
                       item.meal === 'Breakfast' ? 'fa-coffee' : 
                       item.meal === 'Lunch' ? 'fa-utensils' : 
@@ -87,38 +87,38 @@ const History = () => {
                     } text-white/80`}></i>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm leading-tight">{item.meal}</h3>
-                    <p className="text-white/40 text-[10px]">{item.date} • {item.time}</p>
+                    <h3 className="font-bold text-xs leading-tight">{item.meal}</h3>
+                    <p className="text-white/40 text-[9px]">{item.date} • {item.time}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-white/30 text-[10px] italic">Verified</p>
+                  <p className="text-white/30 text-[9px] italic">Verified</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Bottom Fade Overlay for list */}
-          <div className="mt-4 pt-2 border-t border-white/10 text-center">
-             <p className="text-[10px] text-white/40 tracking-widest uppercase">End of Records</p>
+          <div className="mt-3 pt-2 border-t border-white/10 text-center">
+             <p className="text-[9px] text-white/40 tracking-widest uppercase">End of Records</p>
           </div>
         </div>
 
-        {/* Footer Stats - Single Card View */}
-        <div className="mt-8 w-full px-2">
-          <div className="bg-black/30 backdrop-blur-md rounded-2xl p-4 border border-white/5 text-center">
-            <p className="text-white/50 text-[10px] uppercase font-bold">Last Entry</p>
-            <p className="text-lg font-semibold">Today • Lunch</p>
+        {/* Footer Stats - Adjusted for mobile fit */}
+        <div className="mt-6 w-full px-1">
+          <div className="bg-black/40 backdrop-blur-md rounded-xl p-3 border border-white/10 text-center">
+            <p className="text-white/50 text-[9px] uppercase font-bold">Last Entry</p>
+            <p className="text-base font-semibold">Today • Lunch</p>
           </div>
         </div>
 
       </main>
 
       {/* Bottom Nav Simulation */}
-      <nav className="relative z-10 mt-10 mb-6 flex gap-8 text-white/50">
+      <nav className="relative z-10 mt-8 mb-4 flex gap-8 text-white/50 text-sm">
         <button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button>
         <button className="text-white border-b-2 border-white pb-1">History</button>
-        <button className="hover:text-white transition-colors">Timings</button>
+        <button onClick={() => navigate('/timings')} className="hover:text-white transition-colors">Timings</button>
       </nav>
     </div>
   );
