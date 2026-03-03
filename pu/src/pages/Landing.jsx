@@ -6,8 +6,8 @@ const Landing = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    name: "Aryan Sharma",
-    id: "PU-2024-8842",
+    name: "Manish Kumar",
+    id: "PU 2024/19029",
     role: "Hosteller",
     dept: "School of Design & Arts"
   });
