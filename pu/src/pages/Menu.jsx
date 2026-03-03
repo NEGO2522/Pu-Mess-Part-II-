@@ -127,7 +127,6 @@ const Menu = () => {
         <button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button>
         <button onClick={() => navigate('/history')} className="hover:text-white transition-colors">History</button>
         <button onClick={() => navigate('/menu')} className="text-white border-b-2 border-white pb-1">Menu</button>
-        <button onClick={() => navigate('/timings')} className="hover:text-white transition-colors">Timings</button>
       </nav>
     </div>
   );
